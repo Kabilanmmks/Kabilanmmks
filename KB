@@ -1,10 +1,71 @@
-- 👋 Hi, I’m @Kabilanmmks
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+//𝙘𝙖𝙡𝙡 𝙗𝙮 𝙧𝙚𝙛𝙚𝙧𝙚𝙣𝙘𝙚...
+#include<stdio.h>
+void main()
+{
+    int n;
+    printf("Enter no.");
+    scanf("%d",&n);
+    printf("Given number is:%d\n",n);
+    inc(&n);
+    printf("After incrementing %d\n",n);
+}
+void inc(int *n)
+{
+    *n=*n+1;
+    printf("Increment is %d\n",*n);
+}
 
-<!---
-Kabilanmmks/Kabilanmmks is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+********************************************
+
+output
+
+Enter no.7
+Given number is:7
+Increment is 8
+After incrementing 7
+*********************************************
+//𝙘𝙖𝙡𝙡 𝙗𝙮 𝙫𝙖𝙡𝙪𝙚...
+#include<stdio.h>
+void main()
+{
+    int n;
+    printf("Enter no.");
+    scanf("%d",&n);
+    printf("Given number is:%d\n",n);
+    inc(n);
+    printf("After incrementing %d\n",n);
+}
+void inc(int n)
+{
+    n=n+1;
+    printf("Increment is %d\n",n);
+}
+
+**********************************************
+
+output
+
+Enter no.7
+Given number is:7
+Increment is 8
+After incrementing 7
+***********************************************
+//𝙪𝙨𝙞𝙣𝙜 𝙢𝙖𝙩𝙝.𝙝...
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a,ans;
+    printf("Enter the number : ");
+    scanf("%d",&a);
+    ans=pow(a,2);
+    printf("The 2nd power of %d is %d",a,ans);
+}
+
+************************************
+
+output
+
+Enter the number : 10
+The 2nd power of 10 is 100
+*************************************************
