@@ -1,0 +1,8 @@
+Write a Python program to create a dictionary from two lists, where one list contains keys and the other contains values.
+
+keys = ['Name', 'Age', 'City']
+values = ['John', 25, 'New York']
+result_dict = dict(zip(keys, values))
+print("Dictionary from two lists:", result_dict)
+Sample Output :
+Dictionary from two lists: {'Name': 'John', 'Age': 25, 'City': 'New York'}
