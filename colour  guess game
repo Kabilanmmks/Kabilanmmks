@@ -1,0 +1,66 @@
+#colour guess game
+from tkinter import messagebox
+import random
+import tkinter
+from tkinter import *
+colour_name=['yellow','red','white','green','blue','black','pink','brown','purple','cyan','Orange','gold','megenta']
+
+score=0
+time=45
+
+def start(play):
+    if time==45:
+        count()
+    change()
+
+def change():
+    global score
+    global time
+
+    if time > 0:
+        e.focus_set()
+        if e.get().lower()==colour_name[1].lower():
+            score += 1
+
+        e.delete(0,tkinter.END)
+        random.shuffle(colour_name)
+        label.config(fg=str(colour_name[1]),text=str(colour_name[0]))
+        scoreLable.config(text="Score: "+str(score))
+
+def count():
+    global time
+    if time>0:
+        time -= 1
+        timelabel.config(text='Time left: '+ str (time))
+        timelabel.after(1000,count)
+
+def Exit():
+    Exit= messagebox.askyesno("Exit the System","Do you want to Exit(y/n)?")
+    if Exit > 0:
+        kabi.destroy()
+        return
+
+kabi = tkinter.Tk()
+kabi.title("The COLOR Challenge GAME")
+kabi.geometry("600x400")
+kabi.configure(bg="#13edaf")
+
+instruct = tkinter.Label(kabi, text= "Which colour is that?",font =("san-serif",30),bg="#13edaf")
+instruct.pack()
+
+scoreLable= tkinter.Label(kabi, text="Press Enter key to start", font = ("san=serif",25),bg="#13edaf")
+scoreLable.pack()
+
+timelabel= tkinter.Label(kabi, text="Time left: "+str(time),font=("san-serif",18),bg="#13edaf")
+timelabel.pack()
+
+label= tkinter.Label(kabi,font=("san-serif",60),bg="#13edaf")
+label.pack()
+Button_6= tkinter.Button(kabi,highlightcolor="blue",activebackground="red", text="Exit",bd=8, bg="#FF0000", fg="#EEEEF1", width=25, font=("Times", 40),command=Exit)
+Button_6.place(x=230,y=250,height= 50,width=150)
+e=tkinter.Entry(kabi)
+kabi.bind('<Return>',start)
+e.pack()
+e.focus_set()
+
+kabi.mainloop()
